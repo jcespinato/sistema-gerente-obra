@@ -755,8 +755,15 @@ function getDashboard() {
     completedCount: purchases.length,
     monthlySpend: purchases.filter((item) => item.purchase_date.slice(0, 7) === currentMonth).reduce((sum, item) => sum + Number(item.amount_paid), 0),
     requestsByProject: Object.entries(requestsByProjectMap).map(([name, total]) => ({ name, total })).sort((a, b) => b.total - a.total),
-    expiringSoon: requests.filter((row) => row.needed_by_date >= todayString() && row.needed_by_date <= new Date(Date.now() + 5 * 86400000).toISOString().slice(0, 10) && !["Entregue", "Cancelado", "Recusado"].includes(row.status)),
-    overdue: requests.filter((row) => row.needed_by_date < todayString() && !["Entregue", "Cancelado", "Recusado"].includes(row.status)),
+    expiringSoon: requests.filter((row) =>
+      !purchasedRequestIds.has(Number(row.id))
+      && row.needed_by_date >= todayString()
+      && row.needed_by_date <= new Date(Date.now() + 5 * 86400000).toISOString().slice(0, 10)
+      && !["Entregue", "Cancelado", "Recusado"].includes(row.status)),
+    overdue: requests.filter((row) =>
+      !purchasedRequestIds.has(Number(row.id))
+      && row.needed_by_date < todayString()
+      && !["Entregue", "Cancelado", "Recusado"].includes(row.status)),
     statusChart: Object.entries(statusMap).map(([label, total]) => ({ label, total })).sort((a, b) => b.total - a.total)
   };
 }
@@ -1360,6 +1367,69 @@ async function handleApi(req, res, pathname, session) {
 
     saveStore();
     addHistory("purchase", purchase.id, "status_changed", { status, reason: purchase.canceled_reason }, session.username);
+    return json(res, 200, { ok: true });
+  }
+
+  const purchaseMatch = /^\/api\/purchases\/(\d+)$/.exec(pathname);
+  if (purchaseMatch && method === "PUT") {
+    if (!requireAnyPermission(res, session, ["purchases.finalize"])) return;
+    const body = parseJsonBuffer(await readBody(req));
+    const purchase = store.purchases.find((item) => Number(item.id) === Number(purchaseMatch[1]));
+    if (!purchase) return json(res, 404, { error: "Compra nao encontrada" });
+
+    const blockName = String(body.block_name ?? purchase.block_name ?? "").trim();
+    const supplier = String(body.supplier ?? purchase.supplier ?? "").trim();
+    const amountPaid = Number(body.amount_paid ?? purchase.amount_paid);
+    const purchaseDate = String(body.purchase_date ?? purchase.purchase_date ?? "").trim();
+    const deliveryDeadline = String(body.delivery_deadline ?? purchase.delivery_deadline ?? "").trim();
+    const invoiceNumber = String(body.invoice_number ?? purchase.invoice_number ?? "").trim();
+    const budgetReference = String(body.budget_reference ?? purchase.budget_reference ?? "").trim();
+    const paymentMethod = String(body.payment_method ?? purchase.payment_method ?? "").trim();
+    const observations = String(body.observations ?? purchase.observations ?? "").trim();
+
+    if (!blockName) return json(res, 400, { error: "Informe o nome do bloco de compra" });
+    if (!supplier) return json(res, 400, { error: "Informe a loja/fornecedor" });
+    if (!Number.isFinite(amountPaid) || amountPaid < 0) return json(res, 400, { error: "Valor total da compra invalido" });
+    if (!isIsoDate(purchaseDate)) return json(res, 400, { error: "Data da compra invalida" });
+    if (!isIsoDate(deliveryDeadline)) return json(res, 400, { error: "Prazo de entrega invalido" });
+
+    purchase.block_name = blockName;
+    purchase.supplier = supplier;
+    purchase.amount_paid = amountPaid;
+    purchase.purchase_date = purchaseDate;
+    purchase.delivery_deadline = deliveryDeadline;
+    purchase.invoice_number = invoiceNumber;
+    purchase.budget_reference = budgetReference;
+    purchase.payment_method = paymentMethod;
+    purchase.observations = observations;
+    purchase.updated_at = now();
+    saveStore();
+    addHistory("purchase", purchase.id, "updated", {
+      block_name: purchase.block_name,
+      supplier: purchase.supplier,
+      amount_paid: purchase.amount_paid,
+      purchase_date: purchase.purchase_date,
+      delivery_deadline: purchase.delivery_deadline,
+      invoice_number: purchase.invoice_number
+    }, session.username);
+    return json(res, 200, { ok: true });
+  }
+
+  if (purchaseMatch && method === "DELETE") {
+    if (!requireAnyPermission(res, session, ["purchases.finalize"])) return;
+    const purchaseIndex = store.purchases.findIndex((item) => Number(item.id) === Number(purchaseMatch[1]));
+    if (purchaseIndex === -1) return json(res, 404, { error: "Compra nao encontrada" });
+    const [removedPurchase] = store.purchases.splice(purchaseIndex, 1);
+
+    for (const requestId of purchaseRequestIds(removedPurchase)) {
+      const request = store.requests.find((item) => Number(item.id) === Number(requestId) && !item.deleted_at);
+      if (!request) continue;
+      request.status = "Solicitacao recebida";
+      request.approval_state = request.approval_state || "Aprovado";
+      request.updated_at = now();
+    }
+    saveStore();
+    addHistory("purchase", removedPurchase.id, "deleted", { request_ids: purchaseRequestIds(removedPurchase) }, session.username);
     return json(res, 200, { ok: true });
   }
 

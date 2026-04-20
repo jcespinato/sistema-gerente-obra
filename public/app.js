@@ -322,7 +322,7 @@ function renderAlertItem(item, overdue = false) {
         <strong>${escapeHtml(item.item_name)}</strong>
         <span class="priority-pill" data-priority="${escapeHtml(item.priority)}">${escapeHtml(item.priority)}</span>
       </div>
-      <div class="muted">${escapeHtml(item.project_name)} â€¢ ${formatDate(item.needed_by_date)}</div>
+      <div class="muted">${escapeHtml(item.project_name)} - ate ${formatDate(item.needed_by_date)}</div>
       <span class="status-pill">${escapeHtml(item.status)}</span>
     </div>
   `;
@@ -608,6 +608,7 @@ function renderOpenDemands() {
 }
 
 function renderApprovals() {
+  const pendingCount = state.approvals.length;
   return `
     <section class="page-header">
       <div>
@@ -616,13 +617,14 @@ function renderApprovals() {
       </div>
       <div class="top-actions">
         <button class="secondary-button" data-action="refresh-approvals">Atualizar</button>
+        ${pendingCount ? `<button class="primary-button" data-action="approve-all-requests">Aprovar todos (${pendingCount})</button>` : ""}
       </div>
     </section>
     <section class="panel">
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>ID</th><th>Item</th><th>Obra</th><th>Solicitante</th><th>Status</th><th>Aprovacao</th><th>Acoes</th></tr>
+            <tr><th>ID</th><th>Item</th><th>Obra</th><th>Solicitante</th><th>Quantidade</th><th>Status</th><th>Aprovacao</th><th>Acoes</th></tr>
           </thead>
           <tbody>
             ${state.approvals.length ? state.approvals.map((item) => `
@@ -631,6 +633,7 @@ function renderApprovals() {
                 <td><strong>${escapeHtml(item.item_name)}</strong><div class="muted">${escapeHtml(item.description)}</div></td>
                 <td>${escapeHtml(item.project_name)}</td>
                 <td>${escapeHtml(item.requester_name)}</td>
+                <td>${escapeHtml(item.quantity)} ${escapeHtml(item.unit || "")}</td>
                 <td>${escapeHtml(item.status)}</td>
                 <td>${escapeHtml(item.approval_state || "Pendente")}</td>
                 <td>
@@ -640,7 +643,7 @@ function renderApprovals() {
                   </div>
                 </td>
               </tr>
-            `).join("") : `<tr><td colspan="7"><div class="empty-state">Nenhum pedido aguardando aprovacao.</div></td></tr>`}
+            `).join("") : `<tr><td colspan="8"><div class="empty-state">Nenhum pedido aguardando aprovacao.</div></td></tr>`}
           </tbody>
         </table>
       </div>
@@ -850,7 +853,12 @@ function renderHistory() {
                   ${can("purchases.finalize")
                     ? (item.purchase_status === "Cancelada"
                       ? `<button class="secondary-button" data-action="restore-purchase" data-id="${item.id}">Reativar</button>`
-                      : `<button class="secondary-button" data-action="cancel-purchase" data-id="${item.id}">Cancelar compra</button>`)
+                      : `<div class="table-actions">
+                          <button class="secondary-button" data-action="cancel-purchase" data-id="${item.id}">Cancelar compra</button>
+                          <button class="secondary-button" data-action="edit-purchase" data-id="${item.id}">Editar</button>
+                          <button class="danger-button" data-action="delete-purchase" data-id="${item.id}">Excluir</button>
+                          ${!String(item.invoice_number || "").trim() ? `<button class="secondary-button" data-action="add-invoice-number" data-id="${item.id}">Acrescentar NF</button>` : ""}
+                        </div>`)
                     : "-"}
                 </td>
               </tr>
@@ -1027,6 +1035,58 @@ function openFinalizeGroupModal(requestIds) {
 
 function openFinalizeModal(id) {
   openFinalizeGroupModal([id]);
+}
+
+function openPurchaseEditModal(id) {
+  const purchase = state.purchases.find((item) => Number(item.id) === Number(id));
+  if (!purchase) {
+    alert("Compra nao encontrada para edicao.");
+    return;
+  }
+
+  state.modal = `
+    <div class="modal-header">
+      <div><h3 class="section-title">Editar Compra #${purchase.id}</h3><div class="muted">Atualize os dados da compra finalizada.</div></div>
+      <button class="secondary-button" data-action="close-modal">Fechar</button>
+    </div>
+    <form id="edit-purchase-form" class="form-grid">
+      <div class="field"><label>Nome do bloco</label><input name="block_name" value="${escapeHtml(purchase.block_name || "")}" required /></div>
+      <div class="field"><label>Loja / Fornecedor</label><input name="supplier" value="${escapeHtml(purchase.supplier || "")}" required /></div>
+      <div class="field"><label>Data da compra</label><input name="purchase_date" type="date" value="${escapeHtml(purchase.purchase_date || today())}" required /></div>
+      <div class="field"><label>Prazo de entrega</label><input name="delivery_deadline" type="date" value="${escapeHtml(purchase.delivery_deadline || purchase.purchase_date || today())}" required /></div>
+      <div class="field"><label>Numero da nota fiscal</label><input name="invoice_number" value="${escapeHtml(purchase.invoice_number || "")}" /></div>
+      <div class="field"><label>Valor total da compra</label><input name="amount_paid" type="number" step="0.01" min="0" value="${escapeHtml(purchase.amount_paid || 0)}" required /></div>
+      <div class="field full"><label>Resumo de orcamento/cotacao</label><textarea name="budget_reference" rows="5">${escapeHtml(purchase.budget_reference || "")}</textarea></div>
+      <div class="field"><label>Forma de pagamento</label><input name="payment_method" value="${escapeHtml(purchase.payment_method || "")}" /></div>
+      <div class="field full"><label>Observacoes</label><textarea name="observations">${escapeHtml(purchase.observations || "")}</textarea></div>
+      <div class="field full"><button class="primary-button" type="button" data-action="submit-edit-purchase" data-id="${purchase.id}">Salvar alteracoes da compra</button></div>
+    </form>
+  `;
+  render();
+}
+
+async function submitPurchaseEdit(id) {
+  try {
+    const formData = new FormData(document.getElementById("edit-purchase-form"));
+    const payload = {
+      block_name: String(formData.get("block_name") || "").trim(),
+      supplier: String(formData.get("supplier") || "").trim(),
+      amount_paid: Number(formData.get("amount_paid")),
+      purchase_date: String(formData.get("purchase_date") || "").trim(),
+      delivery_deadline: String(formData.get("delivery_deadline") || "").trim(),
+      invoice_number: String(formData.get("invoice_number") || "").trim(),
+      budget_reference: String(formData.get("budget_reference") || "").trim(),
+      payment_method: String(formData.get("payment_method") || "").trim(),
+      observations: String(formData.get("observations") || "").trim()
+    };
+    await api(`/api/purchases/${id}`, { method: "PUT", body: JSON.stringify(payload) });
+    state.modal = null;
+    await refreshAll();
+    state.currentView = "history";
+    render();
+  } catch (error) {
+    alert(error.message);
+  }
 }
 
 function attachEvents() {
@@ -1356,6 +1416,21 @@ async function handleAction(event) {
     render();
     return;
   }
+  if (action === "approve-all-requests") {
+    if (!state.approvals.length) {
+      alert("Nao existem pedidos pendentes para aprovar.");
+      return;
+    }
+    if (!confirm(`Deseja aprovar todos os ${state.approvals.length} pedidos pendentes?`)) return;
+    const reason = prompt("Motivo/observacao da aprovacao em lote (opcional):") || "";
+    for (const item of state.approvals) {
+      await api(`/api/requests/${item.id}/approval`, { method: "PATCH", body: JSON.stringify({ decision: "approve", reason }) });
+    }
+    await refreshAll();
+    state.currentView = "approvals";
+    render();
+    return;
+  }
   if (action === "reject-request") {
     const reason = prompt("Informe o motivo da recusa:") || "";
     await api(`/api/requests/${id}/approval`, { method: "PATCH", body: JSON.stringify({ decision: "reject", reason }) });
@@ -1448,6 +1523,43 @@ async function handleAction(event) {
     await api(`/api/purchases/${id}/status`, {
       method: "PATCH",
       body: JSON.stringify({ status: "Finalizada" })
+    });
+    await refreshAll();
+    state.currentView = "history";
+    render();
+    return;
+  }
+  if (action === "edit-purchase") return openPurchaseEditModal(id);
+  if (action === "submit-edit-purchase") return submitPurchaseEdit(id);
+  if (action === "delete-purchase") {
+    if (!confirm("Deseja excluir esta compra finalizada? Os itens voltarao para demandas em aberto.")) return;
+    await api(`/api/purchases/${id}`, { method: "DELETE" });
+    await refreshAll();
+    state.currentView = "history";
+    render();
+    return;
+  }
+  if (action === "add-invoice-number") {
+    const invoice = String(prompt("Informe o numero da nota fiscal:") || "").trim();
+    if (!invoice) return;
+    const purchase = state.purchases.find((item) => Number(item.id) === Number(id));
+    if (!purchase) {
+      alert("Compra nao encontrada.");
+      return;
+    }
+    await api(`/api/purchases/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        block_name: purchase.block_name,
+        supplier: purchase.supplier,
+        amount_paid: Number(purchase.amount_paid),
+        purchase_date: purchase.purchase_date,
+        delivery_deadline: purchase.delivery_deadline,
+        invoice_number: invoice,
+        budget_reference: purchase.budget_reference || "",
+        payment_method: purchase.payment_method || "",
+        observations: purchase.observations || ""
+      })
     });
     await refreshAll();
     state.currentView = "history";
