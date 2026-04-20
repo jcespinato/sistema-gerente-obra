@@ -1,0 +1,1749 @@
+{
+  "counters": {
+    "users": 6,
+    "projects": 8,
+    "requests": 17,
+    "purchases": 0,
+    "history": 64
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password_hash": "pbkdf2$150000$14db9d340c91b0e56095367681da4c04$9b894ccf3ec7ebdf00d4c96537663765f85cfad7fdd1815b1888c0b0e90bcf19a10b79fcee0d2da4b4c422f9cfef428e326e9275b1c54c384f807aeb0869174c",
+      "role": "ADM",
+      "permissions": [
+        "dashboard.view",
+        "requests.create",
+        "requests.manage",
+        "requests.approve",
+        "purchases.finalize",
+        "reports.view",
+        "history.view",
+        "users.manage",
+        "projects.manage",
+        "employee.requests.create",
+        "employee.requests.view"
+      ],
+      "project_id": null,
+      "project_name": "",
+      "created_at": "2026-04-16T11:08:01.465Z"
+    },
+    {
+      "id": 2,
+      "username": "JAILTON",
+      "password_hash": "pbkdf2$150000$e85e89231ed3ccefbcc1144f2e52ecbf$374b1ae88d0eb0e90ed4e54d3df781b92898721d9d63d70a28081dfb6c1043b3ed6fb23e69dc34ffb8c8c7c4e9c5b5dac55ec7c8e841783f28c2945deca3a0e9",
+      "role": "FUNCIONARIO",
+      "permissions": [
+        "employee.requests.create",
+        "employee.requests.view"
+      ],
+      "project_id": 7,
+      "project_name": "JAGUARE (ES)",
+      "created_at": "2026-04-16T12:22:22.157Z",
+      "updated_at": "2026-04-16T12:22:22.157Z",
+      "deleted_at": false
+    },
+    {
+      "id": 3,
+      "username": "ANDERSON",
+      "password_hash": "pbkdf2$150000$82cfa0a144092dc642f897495df2f44a$7aef899f3ab505fb0ebbd7a4121b538d28e271395dcc764df15d1585fca1a5aeb9d0f5391a3da49f1c2ab6a8c92c954ae6d4ab4d63ab7593537c81d3abcff40b",
+      "role": "FUNCIONARIO",
+      "permissions": [
+        "employee.requests.create",
+        "employee.requests.view"
+      ],
+      "project_id": 5,
+      "project_name": "SAO FRANCISCO (MG)",
+      "created_at": "2026-04-16T12:22:33.947Z",
+      "updated_at": "2026-04-16T12:22:33.947Z",
+      "deleted_at": false
+    },
+    {
+      "id": 4,
+      "username": "SID",
+      "password_hash": "pbkdf2$150000$c7b77d4ded020d4bd0878cd1b51fb675$cdc2a75b22c1109a73422db0843c72bbc49440ea4f7ed7ac6468b9e772d5b46730304d642e1015a07d7aef8d1d12610141e9842010b2ba0d960a79f974176fde",
+      "role": "FUNCIONARIO",
+      "permissions": [
+        "employee.requests.create",
+        "employee.requests.view"
+      ],
+      "project_id": 3,
+      "project_name": "MUNIZ FREIRE (ES)",
+      "created_at": "2026-04-16T12:23:42.003Z",
+      "updated_at": "2026-04-16T12:23:42.003Z",
+      "deleted_at": false
+    },
+    {
+      "id": 5,
+      "username": "GERMANO",
+      "password_hash": "pbkdf2$150000$ba5ed0fff9e5386c3d5e3ab37a9abd88$a18c3798da790d0acafccbf22bb3f92b800fcb86435b526826963aa085b25a53c1450de26228660c9c4c6d81fa443774cf99acfc5a3a03898fd8c96eac215a3a",
+      "role": "FUNCIONARIO",
+      "permissions": [
+        "employee.requests.create",
+        "employee.requests.view"
+      ],
+      "project_id": 2,
+      "project_name": "CPRM (MG)",
+      "created_at": "2026-04-16T12:23:56.888Z",
+      "updated_at": "2026-04-16T12:23:56.888Z",
+      "deleted_at": false
+    },
+    {
+      "id": 6,
+      "username": "JCESPINATO",
+      "password_hash": "pbkdf2$150000$cea00df7d337c828074be177ef2faf2c$7a8610f3c570bcb7b1fa2ef4635e21c75d3fddc99e10efcfd56247fa1b4a9a4a20ece41c89fde80c28b55cb08e507421a75d70a318bae1b5e45468bad1b65454",
+      "role": "ADM",
+      "permissions": [
+        "dashboard.view",
+        "requests.create",
+        "requests.manage",
+        "requests.approve",
+        "purchases.finalize",
+        "reports.view",
+        "history.view",
+        "users.manage",
+        "projects.manage",
+        "employee.requests.create",
+        "employee.requests.view"
+      ],
+      "project_id": null,
+      "project_name": "",
+      "created_at": "2026-04-16T12:24:35.563Z",
+      "updated_at": "2026-04-16T12:24:35.563Z",
+      "deleted_at": false
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Obra Geral",
+      "address": "Endereco nao informado",
+      "created_at": "2026-04-16T11:08:01.465Z",
+      "updated_at": "2026-04-16T12:19:57.842Z",
+      "deleted_at": "2026-04-16T12:19:57.842Z"
+    },
+    {
+      "id": 2,
+      "name": "CPRM (MG)",
+      "address": "Av. Brasil, 1731 - Funcionários, Belo Horizonte - MG, 30140-002",
+      "created_at": "2026-04-16T12:19:46.988Z",
+      "updated_at": "2026-04-16T12:19:46.988Z",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "name": "MUNIZ FREIRE (ES)",
+      "address": "-",
+      "created_at": "2026-04-16T12:20:51.210Z",
+      "updated_at": "2026-04-16T12:20:51.210Z",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "name": "SAO FRANCISCO (ES)",
+      "address": "-",
+      "created_at": "2026-04-16T12:21:02.600Z",
+      "updated_at": "2026-04-16T12:21:20.269Z",
+      "deleted_at": "2026-04-16T12:21:20.269Z"
+    },
+    {
+      "id": 5,
+      "name": "SAO FRANCISCO (MG)",
+      "address": "-",
+      "created_at": "2026-04-16T12:21:28.152Z",
+      "updated_at": "2026-04-16T12:21:28.152Z",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "name": "BARRA DE SAO FRANCISCO (ES)",
+      "address": "-",
+      "created_at": "2026-04-16T12:21:37.740Z",
+      "updated_at": "2026-04-16T12:21:37.740Z",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "name": "JAGUARE (ES)",
+      "address": "-",
+      "created_at": "2026-04-16T12:21:47.130Z",
+      "updated_at": "2026-04-16T12:21:47.130Z",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "name": "IRUPI - CRECHE (ES)",
+      "address": "-",
+      "created_at": "2026-04-16T12:24:52.864Z",
+      "updated_at": "2026-04-16T12:24:52.864Z",
+      "deleted_at": null
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "item_name": "BLOCO",
+      "description": "Estrutural vazado   14x19x39",
+      "quantity": 360,
+      "unit": "unidade",
+      "project_name": "JAGUARE (ES)",
+      "requester_name": "JAILTON",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-23",
+      "priority": "Media",
+      "notes": "Procurar fornecedor",
+      "status": "Pendente de aprovacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "web",
+      "requested_by_user_id": 2,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:26:31.252Z",
+      "updated_at": "2026-04-16T12:51:42.114Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 2,
+      "item_name": "Chave de virar ferro",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "BARRA DE SAO FRANCISCO (ES)",
+      "requester_name": "Sid",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Compra realizada",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:40:52.794Z",
+      "updated_at": "2026-04-16T16:39:00.073Z",
+      "deleted_at": null,
+      "budget_notes": "45 Reais - Casa de tintas"
+    },
+    {
+      "id": 3,
+      "item_name": "arame reduzido liso",
+      "description": "",
+      "quantity": 20,
+      "unit": "kilo",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Pendente de aprovacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:43:15.849Z",
+      "updated_at": "2026-04-16T12:51:39.762Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 4,
+      "item_name": "barramento neutro",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Pendente de aprovacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.705Z",
+      "updated_at": "2026-04-16T12:51:38.827Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 5,
+      "item_name": "caixa com 2 interruptor",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Pendente de aprovacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.711Z",
+      "updated_at": "2026-04-16T12:51:37.936Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 6,
+      "item_name": "caixa 1 interruptor 1 tomada",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.725Z",
+      "updated_at": "2026-04-16T16:40:00.401Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 7,
+      "item_name": "caixa com 2 tomada de 10 A",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.738Z",
+      "updated_at": "2026-04-16T16:39:58.680Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 8,
+      "item_name": "Plugue tomada macho 20A",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-16",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.752Z",
+      "updated_at": "2026-04-16T16:39:47.894Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 9,
+      "item_name": "Regua de tomara 10A",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.765Z",
+      "updated_at": "2026-04-16T16:39:56.320Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 10,
+      "item_name": "barramento fase bipolar",
+      "description": "",
+      "quantity": 1,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.779Z",
+      "updated_at": "2026-04-16T16:39:54.720Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 11,
+      "item_name": "Fio azul 10mm",
+      "description": "",
+      "quantity": 12,
+      "unit": "metro",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.792Z",
+      "updated_at": "2026-04-16T16:39:53.305Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 12,
+      "item_name": "fio preto 10mm",
+      "description": "",
+      "quantity": 24,
+      "unit": "metro",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-16",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.805Z",
+      "updated_at": "2026-04-16T16:39:46.516Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 13,
+      "item_name": "fio verde 10mm",
+      "description": "-",
+      "quantity": 12,
+      "unit": "metro",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-16",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.818Z",
+      "updated_at": "2026-04-16T16:39:45.404Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 14,
+      "item_name": "conector bimetalico 25mm",
+      "description": "-",
+      "quantity": 3,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.831Z",
+      "updated_at": "2026-04-16T16:39:51.738Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 15,
+      "item_name": "fita de alta fusão",
+      "description": "=",
+      "quantity": 2,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "JCESPINATO",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Em cotacao",
+      "approval_state": "Aprovado",
+      "approval_reason": "",
+      "source": "desktop",
+      "requested_by_user_id": 6,
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T12:51:02.845Z",
+      "updated_at": "2026-04-16T16:39:49.702Z",
+      "deleted_at": null,
+      "budget_notes": ""
+    },
+    {
+      "id": 16,
+      "item_name": "Cimento",
+      "description": "usar nas estacas do bloco de fundação.",
+      "quantity": 10,
+      "unit": "unidade",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "ANDERSON",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-23",
+      "priority": "Media",
+      "notes": "",
+      "status": "Pendente de aprovacao",
+      "approval_state": "Pendente",
+      "approval_reason": "",
+      "source": "web",
+      "requested_by_user_id": 3,
+      "budget_notes": "",
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T17:25:10.912Z",
+      "updated_at": "2026-04-16T17:25:10.912Z",
+      "deleted_at": null
+    },
+    {
+      "id": 17,
+      "item_name": "prego 18x27",
+      "description": "",
+      "quantity": 2,
+      "unit": "kilo",
+      "project_name": "SAO FRANCISCO (MG)",
+      "requester_name": "ANDERSON",
+      "request_date": "2026-04-16",
+      "needed_by_date": "2026-04-18",
+      "priority": "Media",
+      "notes": "",
+      "status": "Pendente de aprovacao",
+      "approval_state": "Pendente",
+      "approval_reason": "",
+      "source": "web",
+      "requested_by_user_id": 3,
+      "budget_notes": "",
+      "budget_attachment_path": null,
+      "created_at": "2026-04-16T17:43:42.734Z",
+      "updated_at": "2026-04-16T17:43:42.734Z",
+      "deleted_at": null
+    }
+  ],
+  "purchases": [],
+  "history": [
+    {
+      "id": 64,
+      "entity_type": "request",
+      "entity_id": 17,
+      "action": "employee_created",
+      "details": {
+        "id": 17,
+        "item_name": "prego 18x27",
+        "description": "",
+        "quantity": 2,
+        "unit": "kilo",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "ANDERSON",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Pendente",
+        "approval_reason": "",
+        "source": "web",
+        "requested_by_user_id": 3,
+        "budget_notes": "",
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T17:43:42.734Z",
+        "updated_at": "2026-04-16T17:43:42.734Z",
+        "deleted_at": null
+      },
+      "username": "ANDERSON",
+      "created_at": "2026-04-16T17:43:42.735Z"
+    },
+    {
+      "id": 63,
+      "entity_type": "request",
+      "entity_id": 16,
+      "action": "employee_created",
+      "details": {
+        "id": 16,
+        "item_name": "Cimento",
+        "description": "usar nas estacas do bloco de fundação.",
+        "quantity": 10,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "ANDERSON",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-23",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Pendente",
+        "approval_reason": "",
+        "source": "web",
+        "requested_by_user_id": 3,
+        "budget_notes": "",
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T17:25:10.912Z",
+        "updated_at": "2026-04-16T17:25:10.912Z",
+        "deleted_at": null
+      },
+      "username": "ANDERSON",
+      "created_at": "2026-04-16T17:25:10.914Z"
+    },
+    {
+      "id": 62,
+      "entity_type": "request",
+      "entity_id": 6,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:40:00.405Z"
+    },
+    {
+      "id": 61,
+      "entity_type": "request",
+      "entity_id": 7,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:58.681Z"
+    },
+    {
+      "id": 60,
+      "entity_type": "request",
+      "entity_id": 9,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:56.321Z"
+    },
+    {
+      "id": 59,
+      "entity_type": "request",
+      "entity_id": 10,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:54.722Z"
+    },
+    {
+      "id": 58,
+      "entity_type": "request",
+      "entity_id": 11,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:53.306Z"
+    },
+    {
+      "id": 57,
+      "entity_type": "request",
+      "entity_id": 14,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:51.739Z"
+    },
+    {
+      "id": 56,
+      "entity_type": "request",
+      "entity_id": 15,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:49.704Z"
+    },
+    {
+      "id": 55,
+      "entity_type": "request",
+      "entity_id": 8,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:47.895Z"
+    },
+    {
+      "id": 54,
+      "entity_type": "request",
+      "entity_id": 12,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:46.517Z"
+    },
+    {
+      "id": 53,
+      "entity_type": "request",
+      "entity_id": 13,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:45.404Z"
+    },
+    {
+      "id": 52,
+      "entity_type": "request",
+      "entity_id": 2,
+      "action": "status_changed",
+      "details": {
+        "status": "Compra realizada"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:39:00.074Z"
+    },
+    {
+      "id": 51,
+      "entity_type": "request",
+      "entity_id": 2,
+      "action": "budget_updated",
+      "details": {
+        "budget_notes": "45 Reais - Casa de tintas"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:32:06.639Z"
+    },
+    {
+      "id": 50,
+      "entity_type": "request",
+      "entity_id": 2,
+      "action": "status_changed",
+      "details": {
+        "status": "Em cotacao"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T16:31:15.537Z"
+    },
+    {
+      "id": 49,
+      "entity_type": "request",
+      "entity_id": 14,
+      "action": "updated",
+      "details": {
+        "id": 14,
+        "item_name": "conector bimetalico 25mm",
+        "description": "-",
+        "quantity": 3,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.831Z",
+        "updated_at": "2026-04-16T12:54:54.726Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:54:54.727Z"
+    },
+    {
+      "id": 48,
+      "entity_type": "request",
+      "entity_id": 14,
+      "action": "updated",
+      "details": {
+        "id": 14,
+        "item_name": "conector bimetalico 25mm",
+        "description": "-",
+        "quantity": 3,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.831Z",
+        "updated_at": "2026-04-16T12:54:54.726Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:54:44.528Z"
+    },
+    {
+      "id": 47,
+      "entity_type": "request",
+      "entity_id": 15,
+      "action": "updated",
+      "details": {
+        "id": 15,
+        "item_name": "fita de alta fusão",
+        "description": "=",
+        "quantity": 2,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.845Z",
+        "updated_at": "2026-04-16T12:54:36.944Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:54:36.945Z"
+    },
+    {
+      "id": 46,
+      "entity_type": "request",
+      "entity_id": 13,
+      "action": "updated",
+      "details": {
+        "id": 13,
+        "item_name": "fio verde 10mm",
+        "description": "-",
+        "quantity": 12,
+        "unit": "metro",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-16",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.818Z",
+        "updated_at": "2026-04-16T12:54:28.755Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:54:28.756Z"
+    },
+    {
+      "id": 45,
+      "entity_type": "request",
+      "entity_id": 1,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:42.115Z"
+    },
+    {
+      "id": 44,
+      "entity_type": "request",
+      "entity_id": 2,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:40.658Z"
+    },
+    {
+      "id": 43,
+      "entity_type": "request",
+      "entity_id": 3,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:39.763Z"
+    },
+    {
+      "id": 42,
+      "entity_type": "request",
+      "entity_id": 4,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:38.828Z"
+    },
+    {
+      "id": 41,
+      "entity_type": "request",
+      "entity_id": 5,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:37.937Z"
+    },
+    {
+      "id": 40,
+      "entity_type": "request",
+      "entity_id": 6,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:37.107Z"
+    },
+    {
+      "id": 39,
+      "entity_type": "request",
+      "entity_id": 7,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:36.116Z"
+    },
+    {
+      "id": 38,
+      "entity_type": "request",
+      "entity_id": 9,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:35.010Z"
+    },
+    {
+      "id": 37,
+      "entity_type": "request",
+      "entity_id": 10,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:33.824Z"
+    },
+    {
+      "id": 36,
+      "entity_type": "request",
+      "entity_id": 11,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:31.893Z"
+    },
+    {
+      "id": 35,
+      "entity_type": "request",
+      "entity_id": 14,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:29.789Z"
+    },
+    {
+      "id": 34,
+      "entity_type": "request",
+      "entity_id": 15,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:28.541Z"
+    },
+    {
+      "id": 33,
+      "entity_type": "request",
+      "entity_id": 8,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:19.419Z"
+    },
+    {
+      "id": 32,
+      "entity_type": "request",
+      "entity_id": 12,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:17.885Z"
+    },
+    {
+      "id": 31,
+      "entity_type": "request",
+      "entity_id": 13,
+      "action": "status_changed",
+      "details": {
+        "status": "Pendente de aprovacao"
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:17.013Z"
+    },
+    {
+      "id": 30,
+      "entity_type": "request",
+      "entity_id": 15,
+      "action": "created",
+      "details": {
+        "id": 15,
+        "item_name": "fita de alta fusão",
+        "description": "=",
+        "quantity": 2,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.845Z",
+        "updated_at": "2026-04-16T12:54:36.944Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.850Z"
+    },
+    {
+      "id": 29,
+      "entity_type": "request",
+      "entity_id": 14,
+      "action": "created",
+      "details": {
+        "id": 14,
+        "item_name": "conector bimetalico 25mm",
+        "description": "-",
+        "quantity": 3,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.831Z",
+        "updated_at": "2026-04-16T12:54:54.726Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.837Z"
+    },
+    {
+      "id": 28,
+      "entity_type": "request",
+      "entity_id": 13,
+      "action": "created",
+      "details": {
+        "id": 13,
+        "item_name": "fio verde 10mm",
+        "description": "-",
+        "quantity": 12,
+        "unit": "metro",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-16",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.818Z",
+        "updated_at": "2026-04-16T12:54:28.755Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.823Z"
+    },
+    {
+      "id": 27,
+      "entity_type": "request",
+      "entity_id": 12,
+      "action": "created",
+      "details": {
+        "id": 12,
+        "item_name": "fio preto 10mm",
+        "description": "",
+        "quantity": 24,
+        "unit": "metro",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-16",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.805Z",
+        "updated_at": "2026-04-16T12:51:17.884Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.810Z"
+    },
+    {
+      "id": 26,
+      "entity_type": "request",
+      "entity_id": 11,
+      "action": "created",
+      "details": {
+        "id": 11,
+        "item_name": "Fio azul 10mm",
+        "description": "",
+        "quantity": 12,
+        "unit": "metro",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.792Z",
+        "updated_at": "2026-04-16T12:51:31.892Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.797Z"
+    },
+    {
+      "id": 25,
+      "entity_type": "request",
+      "entity_id": 10,
+      "action": "created",
+      "details": {
+        "id": 10,
+        "item_name": "barramento fase bipolar",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.779Z",
+        "updated_at": "2026-04-16T12:51:33.823Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.784Z"
+    },
+    {
+      "id": 24,
+      "entity_type": "request",
+      "entity_id": 9,
+      "action": "created",
+      "details": {
+        "id": 9,
+        "item_name": "Regua de tomara 10A",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.765Z",
+        "updated_at": "2026-04-16T12:51:35.010Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.770Z"
+    },
+    {
+      "id": 23,
+      "entity_type": "request",
+      "entity_id": 8,
+      "action": "created",
+      "details": {
+        "id": 8,
+        "item_name": "Plugue tomada macho 20A",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-16",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.752Z",
+        "updated_at": "2026-04-16T12:51:19.418Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.756Z"
+    },
+    {
+      "id": 22,
+      "entity_type": "request",
+      "entity_id": 7,
+      "action": "created",
+      "details": {
+        "id": 7,
+        "item_name": "caixa com 2 tomada de 10 A",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.738Z",
+        "updated_at": "2026-04-16T12:51:36.115Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.743Z"
+    },
+    {
+      "id": 21,
+      "entity_type": "request",
+      "entity_id": 6,
+      "action": "created",
+      "details": {
+        "id": 6,
+        "item_name": "caixa 1 interruptor 1 tomada",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.725Z",
+        "updated_at": "2026-04-16T12:51:37.106Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.730Z"
+    },
+    {
+      "id": 20,
+      "entity_type": "request",
+      "entity_id": 5,
+      "action": "created",
+      "details": {
+        "id": 5,
+        "item_name": "caixa com 2 interruptor",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.711Z",
+        "updated_at": "2026-04-16T12:51:37.936Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.716Z"
+    },
+    {
+      "id": 19,
+      "entity_type": "request",
+      "entity_id": 4,
+      "action": "created",
+      "details": {
+        "id": 4,
+        "item_name": "barramento neutro",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:51:02.705Z",
+        "updated_at": "2026-04-16T12:51:38.827Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:51:02.706Z"
+    },
+    {
+      "id": 18,
+      "entity_type": "request",
+      "entity_id": 3,
+      "action": "created",
+      "details": {
+        "id": 3,
+        "item_name": "arame reduzido liso",
+        "description": "",
+        "quantity": 20,
+        "unit": "kilo",
+        "project_name": "SAO FRANCISCO (MG)",
+        "requester_name": "JCESPINATO",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:43:15.849Z",
+        "updated_at": "2026-04-16T12:51:39.762Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:43:15.850Z"
+    },
+    {
+      "id": 17,
+      "entity_type": "request",
+      "entity_id": 2,
+      "action": "created",
+      "details": {
+        "id": 2,
+        "item_name": "Chave de virar ferro",
+        "description": "",
+        "quantity": 1,
+        "unit": "unidade",
+        "project_name": "BARRA DE SAO FRANCISCO (ES)",
+        "requester_name": "Sid",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-18",
+        "priority": "Media",
+        "notes": "",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Aprovado",
+        "approval_reason": "",
+        "source": "desktop",
+        "requested_by_user_id": 6,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:40:52.794Z",
+        "updated_at": "2026-04-16T12:51:40.657Z",
+        "deleted_at": null
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:40:52.795Z"
+    },
+    {
+      "id": 16,
+      "entity_type": "request",
+      "entity_id": 1,
+      "action": "approved",
+      "details": {
+        "reason": ""
+      },
+      "username": "JCESPINATO",
+      "created_at": "2026-04-16T12:34:19.493Z"
+    },
+    {
+      "id": 15,
+      "entity_type": "request",
+      "entity_id": 1,
+      "action": "employee_created",
+      "details": {
+        "id": 1,
+        "item_name": "BLOCO",
+        "description": "Estrutural vazado   14x19x39",
+        "quantity": 360,
+        "unit": "unidade",
+        "project_name": "JAGUARE (ES)",
+        "requester_name": "JAILTON",
+        "request_date": "2026-04-16",
+        "needed_by_date": "2026-04-23",
+        "priority": "Media",
+        "notes": "Procurar fornecedor",
+        "status": "Pendente de aprovacao",
+        "approval_state": "Pendente",
+        "approval_reason": "",
+        "source": "web",
+        "requested_by_user_id": 2,
+        "budget_attachment_path": null,
+        "created_at": "2026-04-16T12:26:31.252Z",
+        "updated_at": "2026-04-16T12:26:31.252Z",
+        "deleted_at": null
+      },
+      "username": "JAILTON",
+      "created_at": "2026-04-16T12:26:31.253Z"
+    },
+    {
+      "id": 14,
+      "entity_type": "project",
+      "entity_id": 8,
+      "action": "created",
+      "details": {
+        "id": 8,
+        "name": "IRUPI - CRECHE (ES)",
+        "address": "-",
+        "created_at": "2026-04-16T12:24:52.864Z",
+        "updated_at": "2026-04-16T12:24:52.864Z",
+        "deleted_at": null
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:24:52.865Z"
+    },
+    {
+      "id": 13,
+      "entity_type": "user",
+      "entity_id": 6,
+      "action": "created",
+      "details": {
+        "username": "JCESPINATO",
+        "role": "ADM",
+        "permissions": [
+          "dashboard.view",
+          "requests.create",
+          "requests.manage",
+          "requests.approve",
+          "purchases.finalize",
+          "reports.view",
+          "history.view",
+          "users.manage",
+          "projects.manage",
+          "employee.requests.create",
+          "employee.requests.view"
+        ]
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:24:35.563Z"
+    },
+    {
+      "id": 12,
+      "entity_type": "user",
+      "entity_id": 5,
+      "action": "created",
+      "details": {
+        "username": "GERMANO",
+        "role": "FUNCIONARIO",
+        "permissions": [
+          "employee.requests.create",
+          "employee.requests.view"
+        ]
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:23:56.888Z"
+    },
+    {
+      "id": 11,
+      "entity_type": "user",
+      "entity_id": 4,
+      "action": "created",
+      "details": {
+        "username": "SID",
+        "role": "FUNCIONARIO",
+        "permissions": [
+          "employee.requests.create",
+          "employee.requests.view"
+        ]
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:23:42.004Z"
+    },
+    {
+      "id": 10,
+      "entity_type": "user",
+      "entity_id": 3,
+      "action": "created",
+      "details": {
+        "username": "ANDERSON",
+        "role": "FUNCIONARIO",
+        "permissions": [
+          "employee.requests.create",
+          "employee.requests.view"
+        ]
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:22:33.948Z"
+    },
+    {
+      "id": 9,
+      "entity_type": "user",
+      "entity_id": 2,
+      "action": "created",
+      "details": {
+        "username": "JAILTON",
+        "role": "FUNCIONARIO",
+        "permissions": [
+          "employee.requests.create",
+          "employee.requests.view"
+        ]
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:22:22.158Z"
+    },
+    {
+      "id": 8,
+      "entity_type": "project",
+      "entity_id": 7,
+      "action": "created",
+      "details": {
+        "id": 7,
+        "name": "JAGUARE (ES)",
+        "address": "-",
+        "created_at": "2026-04-16T12:21:47.130Z",
+        "updated_at": "2026-04-16T12:21:47.130Z",
+        "deleted_at": null
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:21:47.131Z"
+    },
+    {
+      "id": 7,
+      "entity_type": "project",
+      "entity_id": 6,
+      "action": "created",
+      "details": {
+        "id": 6,
+        "name": "BARRA DE SAO FRANCISCO (ES)",
+        "address": "-",
+        "created_at": "2026-04-16T12:21:37.740Z",
+        "updated_at": "2026-04-16T12:21:37.740Z",
+        "deleted_at": null
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:21:37.741Z"
+    },
+    {
+      "id": 6,
+      "entity_type": "project",
+      "entity_id": 5,
+      "action": "created",
+      "details": {
+        "id": 5,
+        "name": "SAO FRANCISCO (MG)",
+        "address": "-",
+        "created_at": "2026-04-16T12:21:28.152Z",
+        "updated_at": "2026-04-16T12:21:28.152Z",
+        "deleted_at": null
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:21:28.153Z"
+    },
+    {
+      "id": 5,
+      "entity_type": "project",
+      "entity_id": 4,
+      "action": "deleted",
+      "details": {},
+      "username": "admin",
+      "created_at": "2026-04-16T12:21:20.270Z"
+    },
+    {
+      "id": 4,
+      "entity_type": "project",
+      "entity_id": 4,
+      "action": "created",
+      "details": {
+        "id": 4,
+        "name": "SAO FRANCISCO (ES)",
+        "address": "-",
+        "created_at": "2026-04-16T12:21:02.600Z",
+        "updated_at": "2026-04-16T12:21:20.269Z",
+        "deleted_at": "2026-04-16T12:21:20.269Z"
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:21:02.601Z"
+    },
+    {
+      "id": 3,
+      "entity_type": "project",
+      "entity_id": 3,
+      "action": "created",
+      "details": {
+        "id": 3,
+        "name": "MUNIZ FREIRE (ES)",
+        "address": "-",
+        "created_at": "2026-04-16T12:20:51.210Z",
+        "updated_at": "2026-04-16T12:20:51.210Z",
+        "deleted_at": null
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:20:51.211Z"
+    },
+    {
+      "id": 2,
+      "entity_type": "project",
+      "entity_id": 1,
+      "action": "deleted",
+      "details": {},
+      "username": "admin",
+      "created_at": "2026-04-16T12:19:57.843Z"
+    },
+    {
+      "id": 1,
+      "entity_type": "project",
+      "entity_id": 2,
+      "action": "created",
+      "details": {
+        "id": 2,
+        "name": "CPRM (MG)",
+        "address": "Av. Brasil, 1731 - Funcionários, Belo Horizonte - MG, 30140-002",
+        "created_at": "2026-04-16T12:19:46.988Z",
+        "updated_at": "2026-04-16T12:19:46.988Z",
+        "deleted_at": null
+      },
+      "username": "admin",
+      "created_at": "2026-04-16T12:19:46.989Z"
+    }
+  ]
+}

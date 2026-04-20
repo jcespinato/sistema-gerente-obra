@@ -1,0 +1,17 @@
+{
+  "name": "sistema-compras-corporativas",
+  "version": "1.0.0",
+  "description": "Sistema web para controle de compras e orcamentos corporativos",
+  "main": "app-server.js",
+  "bin": "app-server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node app-server.js",
+    "build:exe": "npx pkg . --targets node18-win-x64 --output dist/sistema-compras.exe"
+  },
+  "pkg": {
+    "assets": [
+      "public/**/*"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "counters": {
+    "users": 1,
+    "projects": 1,
+    "requests": 0,
+    "purchases": 0,
+    "history": 0
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password_hash": "pbkdf2$150000$937604d854fe70977f979662b3828833$d93128d9dcea9c79b45ac290dec8b752ddb590821e31870234c5c6a8f28369c0c8a6e91854f00b0ef2d46cecf34673f53b81ae3fdc18fc10b07cbd43e0b69aa4",
+      "role": "ADM",
+      "permissions": [
+        "dashboard.view",
+        "requests.create",
+        "requests.manage",
+        "requests.approve",
+        "purchases.finalize",
+        "reports.view",
+        "history.view",
+        "users.manage",
+        "projects.manage",
+        "employee.requests.create",
+        "employee.requests.view"
+      ],
+      "project_id": null,
+      "project_name": "",
+      "created_at": "2026-04-16T13:25:20.526Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Obra Geral",
+      "address": "Endereco nao informado",
+      "created_at": "2026-04-16T13:25:20.535Z",
+      "updated_at": "2026-04-16T13:25:20.535Z",
+      "deleted_at": null
+    }
+  ],
+  "requests": [],
+  "purchases": [],
+  "history": []
+}
